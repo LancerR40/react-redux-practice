@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from './components/Form';
+import List from './components/List';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { filter } from './reducers/filterReducer';
+import { initNotes } from './reducers/noteReducer';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initNotes());
+  }, [dispatch]);
+
+  const filteredSelect = (value) => {
+    dispatch(filter(value));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form />
+
+      <div>
+        <input
+          type="radio"
+          name="filter"
+          onChange={() => filteredSelect('ALL')}
+          defaultChecked={true}
+        />
+        All
+        <input
+          type="radio"
+          name="filter"
+          onChange={() => filteredSelect('IMPORTANT')}
+        />
+        Important
+        <input
+          type="radio"
+          name="filter"
+          onChange={() => filteredSelect('NOT_IMPORTANT')}
+        />
+        Not important
+      </div>
+
+      <List />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "content": "Hello World",
+      "importance": false,
+      "id": 1
+    },
+    {
+      "content": "Im developer",
+      "importance": false,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "content": "Im react js developer",
+      "importance": false
+    },
+    {
+      "id": "45b69325-8b28-44df-a35b-0579db4611b7",
+      "content": "Learning Redux",
+      "importance": false
+    },
+    {
+      "id": "99c578bd-e5d7-4d3b-b2be-91c0898b89e9",
+      "content": "Learning Redux",
+      "importance": false
+    },
+    {
+      "id": "d7438a37-8761-4769-a872-13f361555b2e",
+      "content": "Today MongoDB",
+      "importance": false
+    }
+  ]
+}
